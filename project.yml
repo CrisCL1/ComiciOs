@@ -10,7 +10,7 @@ settings:
   base:
     MARKETING_VERSION: "1.0"
     CURRENT_PROJECT_VERSION: "1"
-    SWIFT_VERSION: "5.9"
+    SWIFT_VERSION: "5.0"   # modo de lenguaje Swift 5 (evita el modo estricto de Swift 6)
     DEVELOPMENT_TEAM: ""
     CODE_SIGN_STYLE: Automatic
     ENABLE_USER_SCRIPT_SANDBOXING: NO
