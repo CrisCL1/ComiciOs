@@ -12,11 +12,19 @@ on:
 
 jobs:
   build:
-    runs-on: macos-14
+    runs-on: macos-15
 
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+
+      # XcodeGen genera el proyecto en formato 77, que necesita Xcode 16+.
+      # Elegimos el Xcode mas reciente que traiga la imagen del runner.
+      - name: Seleccionar Xcode
+        run: |
+          ls -d /Applications/Xcode*.app
+          sudo xcode-select -s "$(ls -d /Applications/Xcode*.app | sort -V | tail -1)"
+          xcodebuild -version
 
       - name: Instalar XcodeGen
         run: brew install xcodegen
